@@ -21,11 +21,14 @@
   color: #002f34;
 }
 
-.recommendations .cards {
+ .recommendations .cards {
   display: flex;
+  flex-wrap: wrap;
+  row-gap: 10px;
+  column-gap: 2em;
 }
 
-.moreView .cards {
+/* .moreView .cards {
   white-space: nowrap;
   overflow-x: scroll;
   overflow-y: hidden;
@@ -37,7 +40,7 @@
   max-width: 222px;
   width: 222px;
   height: 270px;
-  display: inline-block;
+  display: flex;
   cursor: pointer;
 }
 
@@ -62,6 +65,7 @@
 }
 .card .content .rate {
   margin-top: 10px;
+  margin-left: 20px;
   font-size: larger;
   font-weight: bold;
 }
@@ -70,12 +74,13 @@
 }
 .card .content .name {
   font-size: small;
+  margin-left: 20px;
 }
 .card .date {
   display: flex;
   justify-content: flex-end;
   font-size: small;
-}
+} */
 
 .recommendations {
   margin: 16px 16px 24px;

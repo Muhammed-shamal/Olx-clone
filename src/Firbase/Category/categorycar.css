@@ -1,0 +1,7 @@
+.currentLocation .ol_one {
+    height: 100%;
+    align-items: center;
+    box-sizing: border-box;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }

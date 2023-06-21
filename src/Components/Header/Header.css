@@ -94,9 +94,6 @@
   margin-right: 5px;
 }
 
-.language svg {
-}
-
 .span {
   text-decoration: none;
   font-size: 16px;
@@ -112,7 +109,7 @@
   height: 2px;
 }
 
-.loginPage a{
+.loginPage a {
   text-decoration: none;
 }
 
@@ -161,4 +158,42 @@
   .sellMenu {
     display: none;
   }
+}
+
+.heart:hover {
+  background: #5aece4;
+  width: 80%;
+}
+
+.billing:hover {
+  background: #5aece4;
+  width: 80%;
+}
+
+.business:hover {
+  background: #5aece4;
+  width: 80%;
+}
+
+.setting:hover {
+  background: #5aece4;
+  width: 80%;
+}
+
+.logout {
+  background: #5aece4;
+  width: 80%;
+}
+
+.help:hover {
+  background: #5aece4;
+  width: 80%;
+}
+
+.bell:focus{
+  background: #5aece4;
+}
+
+.chat-btn:focus{
+  background: #5aece4;
 }

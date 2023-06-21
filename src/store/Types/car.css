@@ -1,0 +1,65 @@
+picture .pic {
+  width: 100%;
+  height: 100%;
+  min-height: 30px;
+}
+
+picture {
+  cursor: pointer;
+  border: 1px solid var(--blackDividers);
+  border-radius: 8px;
+  position: relative;
+  background: var(--white);
+  display: inline-block;
+  text-align: center;
+  margin-right: 4.79%;
+}
+
+li {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  cursor: pointer;
+}
+
+.box {
+  padding: 0 8px;
+  margin: 0 0 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 30px;
+  border: 0.6px solid gray;
+  border-radius: 2.4px;
+  cursor: pointer;
+}
+
+.body1 {
+  border: 1px solid gray;
+  padding: 10px;
+}
+
+button {
+  margin-left: 15px;
+  margin-bottom: 5px;
+  padding: 5px;
+}
+
+.boxBtn {
+  padding: 0 8px;
+  margin: 0 0 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 30px;
+  border: 0.6px solid rgb(96, 96, 96);
+  border-radius: 2.4px;
+  cursor: pointer;
+}
+
+.cards{
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 10px;
+  column-gap: 2em;
+}

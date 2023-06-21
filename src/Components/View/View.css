@@ -1,14 +1,14 @@
-.viewParentDiv {
+/* .viewParentDiv {
   padding-top: 4em;
   display: flex;
 }
 .viewParentDiv .imageShowDiv {
   padding: 16px;
-  width: 70vw;
+  width: 80%;
 }
 .viewParentDiv .imageShowDiv img {
-  width: 65vw;
-  height: 85vh;
+  width: 80%;
+  height: 80vh;
 }
 
 .viewParentDiv .rightSection {
@@ -47,4 +47,57 @@
   color: #002f34;
   font-weight: 400;
   padding: 0;
+} */
+
+.itemDetails {
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  margin: 16px 0 0;
+  padding: 16px 24px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.contactDetails {
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  margin: 16px 0 0;
+  padding: 20px 24px;
+}
+
+.imageShowDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  width: 100%;
+}
+
+.imageShowDiv img {
+  width: 75%;
+  height: auto;
+}
+
+@media only screen and (max-width: 550px) {
+  .imageShowDiv img {
+    width: 300px;
+    height: 100px;
+  }
+}
+
+.cardSection {
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  width: 30em;
+  padding: 10px 15px;
+}
+
+.price {
+  color: rgb(0 47 52);
+}
+
+.fullCard {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  border: none;
+  padding: 10px;
 }

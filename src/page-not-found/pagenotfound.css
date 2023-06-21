@@ -1,0 +1,39 @@
+.error-code h1 {
+  font-weight: 700;
+  font-size: 112px;
+  margin-bottom: 19px;
+  color: rgb(6 53 57);
+}
+
+.error-code {
+  display: inline-block;
+}
+
+.oops {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row-reverse;
+  margin: 45px auto 52px;
+  max-width: 777px;
+  padding: 0 24px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  margin-left: 15px;
+}
+
+.errorImg {
+  max-height: 301px;
+  max-width: 301px;
+  min-height: 188px;
+  min-width: 188px;
+  margin: auto 0;
+}
+
+.errorImg picture img {
+  height: auto;
+  width: 100%;
+}

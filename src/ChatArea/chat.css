@@ -1,0 +1,14 @@
+
+.errorImg {
+  max-height: 301px;
+  max-width: 301px;
+  min-height: 188px;
+  min-width: 188px;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+}
+
+.errorImg picture img {
+   
+}

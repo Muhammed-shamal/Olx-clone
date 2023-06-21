@@ -1,60 +1,63 @@
-import React from 'react';
-
-import Heart from '../../assets/Heart';
-import './Post.css';
+import React, { useContext, useEffect, useState } from "react";
+//import Heart from "../../assets/Heart";
+import "./Post.css";
+import { FirebaseContext } from "../../store/Context";
+import { Link } from "react-router-dom";
+import Barloading from "../../Loading/BarLoading";
+import PostCards from "./PostCards";
+import { AllPostContext } from "../../store/AllPostContext";
 
 function Posts() {
+  const { setAllPost } = useContext(AllPostContext);
+  const { firebase } = useContext(FirebaseContext);
+  const [post, setPost] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    setLoading(true);
+    firebase
+      .firestore()
+      .collection("products")
+      .get()
+      .then((snapshot) => {
+        const allPostDesendingOrder = snapshot.docs.map((product) => {
+          return {
+            ...product.data(),
+            id: product.id,
+          };
+        });
+        setPost(allPostDesendingOrder);
+        setAllPost(allPostDesendingOrder);
+        setLoading(false);
+      });
+  }, [setAllPost]);
+
+  // quickMenuCards assign all cards of post item later it will be displayed
+  let quickMenuCards = post.map((product, index) => {
+    return (
+      <div className="fresh-recomendation-card" key={index}>
+        <PostCards product={product} index={index} />{" "}
+      </div>
+    );
+  });
 
   return (
     <div className="postParentDiv">
       <div className="moreView">
-        <div className="heading">
-          <span>Quick Menu</span>
-          <span>View more</span>
-        </div>
-        <div className="cards">
-          <div
-            className="card"
-          >
-            <div className="favorite">
-              <Heart></Heart>
+        {post && (
+          <div className="recommendations">
+            <div className="heading">
+              <span className="mt-2 mb-4">Fresh recommendations</span>
+
+              <Link to="./viewmore">
+                <small className="mt-2 mb-4">View more</small>
+              </Link>
             </div>
-            <div className="image">
-              <img src="../../../Images/R15V3.jpg" alt="" />
-            </div>
-            <div className="content">
-              <p className="rate">&#x20B9; 250000</p>
-              <span className="kilometer">Two Wheeler</span>
-              <p className="name"> YAMAHA R15V3</p>
-            </div>
-            <div className="date">
-              <span>Tue May 04 2021</span>
+            <div className="cards">
+              {loading ? <Barloading /> : quickMenuCards}
             </div>
           </div>
-        </div>
-      </div>
-      <div className="recommendations">
-        <div className="heading">
-          <span>Fresh recommendations</span>
-        </div>
-        <div className="cards">
-          <div className="card">
-            <div className="favorite">
-              <Heart></Heart>
-            </div>
-            <div className="image">
-              <img src="../../../Images/R15V3.jpg" alt="" />
-            </div>
-            <div className="content">
-              <p className="rate">&#x20B9; 250000</p>
-              <span className="kilometer">Two Wheeler</span>
-              <p className="name"> YAMAHA R15V3</p>
-            </div>
-            <div className="date">
-              <span>10/5/2021</span>
-            </div>
-          </div>
-        </div>
+        )}
       </div>
     </div>
   );
