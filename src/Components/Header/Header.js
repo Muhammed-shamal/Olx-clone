@@ -30,8 +30,6 @@ function Header() {
   const { user } = useContext(AuthContext);
   const history = useHistory();
 
-  console.log(user);
-
   return (
     <div className=" headerParentDiv">
       <div className="headerChildDiv">
@@ -86,7 +84,7 @@ function Header() {
           />
         </div>
 
-        <Dropdown placement="right" className="mr-5 mt-2">
+        <Dropdown placement="right" className=" mt-2">
           <Dropdown.Toggle variant="light"></Dropdown.Toggle>
           <Dropdown.Menu>
             <div className="loginPage">

@@ -1,4 +1,3 @@
-
 .errorImg {
   max-height: 301px;
   max-width: 301px;
@@ -9,6 +8,17 @@
   justify-items: center;
 }
 
-.errorImg picture img {
-   
+@media screen and (min-width: 600px) {
+  .errorImg img {
+    margin-left: 5em;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .errorImg img {
+    align-self: center;
+    width: 200px;
+    position: relative;
+    margin-left: 6em;
+  }
 }

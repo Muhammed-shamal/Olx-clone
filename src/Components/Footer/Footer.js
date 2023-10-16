@@ -14,7 +14,7 @@ function Footer() {
             <ul>
               <li>kolkata</li>
               <li>Mumbai</li>
-              <li>Chennai</li>
+              <li>Chennai</li>XR
               <li>Pune</li>
             </ul>
           </div>

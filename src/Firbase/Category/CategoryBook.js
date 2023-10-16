@@ -4,6 +4,7 @@ import { AiOutlineArrowLeft } from "react-icons/ai";
 import { useHistory } from "react-router-dom";
 import { AuthContext, FirebaseContext } from "../../store/Context";
 import Footer from "../../Components/Footer/Footer";
+import "./categorycar.css";
 
 export default function CategoryBook() {
   const [userDetails, setUserDetails] = useState("");
@@ -81,7 +82,6 @@ export default function CategoryBook() {
               <Form.Label>Type *</Form.Label>
               <div>
                 <select
-                  className="selection"
                   data-aut-id="ddmake"
                   onChange={(event) => setCategory(event.target.value)}
                 >
@@ -165,7 +165,7 @@ export default function CategoryBook() {
               <h4>CONFIRM YOUR LOCATION</h4>
               <Form.Label>state *</Form.Label>
               <div>
-                <select className="selection" data-aut-id="dd-state">
+                <select data-aut-id="dd-state">
                   <option value="unknown"></option>
                   <option value="2007598">Andaman &amp; Nicobar Islands</option>
                   <option value="2001145">Andhra Pradesh</option>

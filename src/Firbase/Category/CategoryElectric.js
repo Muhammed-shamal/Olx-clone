@@ -1,22 +1,20 @@
 import React, { useContext, useState } from "react";
 import { Button, Container, Form, InputGroup, Navbar } from "react-bootstrap";
 import { AiOutlineArrowLeft } from "react-icons/ai";
-import { useHistory, useLocation } from "react-router-dom";
+import { useHistory } from "react-router-dom";
+import { AuthContext, FirebaseContext } from "../../store/Context";
 import Footer from "../../Components/Footer/Footer";
 import "./categorycar.css";
-import { AuthContext, FirebaseContext } from "../../store/Context";
 
-export default function CategoryBikes() {
-  const [img, setImg] = useState(null);
-  const [itemName, setItemName] = useState("");
-  const [type, setType] = useState("");
-  const [price, setPrice] = useState("");
-  const [year, setYear] = useState("");
-  const [km, setKm] = useState("");
-  const [description, setDescription] = useState("");
+export default function CategoryElectric() {
   const [userDetails, setUserDetails] = useState("");
   const history = useHistory();
   const { firebase } = useContext(FirebaseContext);
+  const [img, setImg] = useState(null);
+  const [itemName, setItemName] = useState("");
+  const [category, setCategory] = useState("");
+  const [price, setPrice] = useState("");
+  const [description, setDescription] = useState("");
   const { user } = useContext(AuthContext);
 
   const date = new Date();
@@ -31,12 +29,10 @@ export default function CategoryBikes() {
           console.log(url);
           firebase.firestore().collection("products").add({
             itemName,
-            type,
+            category,
             price,
             url,
             description,
-            km,
-            year,
             userId: user.uid,
             createdDate: date.toDateString(),
           });
@@ -83,25 +79,25 @@ export default function CategoryBikes() {
 
           <Form>
             <Form.Group className="mb-3 mt-3">
-              <Form.Label>Select the Type *</Form.Label>
+              <Form.Label>Type *</Form.Label>
               <div>
                 <select
-                  data-aut-id="dd-state"
-                  onChange={(event) => setType(event.target.value)}
+                  data-aut-id="ddmake"
+                  onChange={(event) => setCategory(event.target.value)}
                 >
-                  <option value="unknown"></option>
-                  <option value="Bikes">Bikes</option>
+                  <option value=""></option>
+                  <optgroup label="Popular Items"></optgroup>
+                  <option value="smart">Fridge && Washing Machine</option>
+                  <option value="ssangyong">Tv</option>
+                  <option value="subaru">Mobiles && Laptops</option>
+                  <option value="volvo">AC/Fan</option>
                 </select>
               </div>
             </Form.Group>
 
             <Form.Group className="mb-3">
               <Form.Label>Year *</Form.Label>
-              <Form.Control
-                size="lg"
-                className="w-50"
-                onChange={(event) => setYear(event.target.value)}
-              />
+              <Form.Control size="lg" className="w-50" />
             </Form.Group>
 
             <Form.Group className="mb-3 mt-2">
@@ -244,7 +240,6 @@ export default function CategoryBikes() {
           <Button onClick={handlePost}>Post Now</Button>
         </div>
       </Container>
-
       <Footer />
     </div>
   );

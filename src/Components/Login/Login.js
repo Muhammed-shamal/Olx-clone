@@ -21,6 +21,9 @@ function Login() {
       .signInWithEmailAndPassword(email, password)
       .then(() => {
         history.push("/");
+      })
+      .catch((error) => {
+        alert("Please correct your data first");
       });
   };
   return (

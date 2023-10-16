@@ -19,6 +19,7 @@ export default function Signup() {
   const handleSubmit = (event) => {
     event.preventDefault();
     setLoading(true);
+
     firebase
       .auth()
       .createUserWithEmailAndPassword(Email, Password)

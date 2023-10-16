@@ -13,6 +13,13 @@
   font-weight: bolder;
 }
 
+@media screen and (max-width: 600px) {
+  .footerParentDiv .content .heading {
+    font-size: 18px;
+    font-weight: bold;
+  }
+}
+
 .footerParentDiv .footer {
   display: flex;
   justify-content: space-between;

@@ -6,32 +6,33 @@ import { PostContext } from "../../store/PostContext";
 
 function PostCards({ product, index }) {
   const { setPostDetails } = useContext(PostContext);
-  const history = useHistory(); //at the time of onClick on post , we want redirect to the view post page
+  const history = useHistory();
 
   return (
-    <div
-      className="card row"
-      key={index}
-      onClick={() => {
-        setPostDetails(product);
-        history.push("/view");
-        console.log(product);
-      }}
-    >
-      <div className="favorite">
-        <Heart></Heart>
-      </div>
-      <div className="image">
-        <img src={product.url} alt="" />
-      </div>
-      <div className="content">
-        <p className="rate">&#x20B9; {product.price}</p>
-        <span className="category"> {product.itemName} </span>
-        <p className="name"> {product.category}</p>
-        <small className="name"> {product.price}</small>
-      </div>
-      <div className="date">
-        <span>{product.createdDate}</span>
+    <div className="cont">
+      <div className="row d-flex">
+        <div className="col-12">
+          <div
+            className="card"
+            key={index}
+            onClick={() => {
+              setPostDetails(product);
+              history.push("/view");
+            }}
+          >
+            <div className="favorite">
+              <Heart></Heart>
+            </div>
+            <div className="image">
+              <img src={product.url} alt="img" className="card-img" />
+            </div>
+            <div className=" mt-2 card-body">
+              <p className="card-title rate">&#x20B9; {product.price}</p>
+              <small className="card-text">{product.year}</small>
+              <span className="category card-text"> {product.itemName} </span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -37,7 +37,7 @@ export default function Category() {
           <Container fluid>
             <Navbar.Brand href="#">
               <span>
-                <AiOutlineArrowLeft onClick={() => window.history.back()} />
+                <AiOutlineArrowLeft onClick={() => history.push("/")} />
               </span>
             </Navbar.Brand>
           </Container>
@@ -74,19 +74,6 @@ export default function Category() {
                         <AiOutlineBuild className="mr-2" />
                       </span>
                       Properties
-                      <span>
-                        <AiOutlineArrowRight className="mr-2" />
-                      </span>
-                    </ListGroup.Item>
-                    <ListGroup.Item
-                      className="text-muted d-flex justify-content-between"
-                      action
-                      href="#link3"
-                    >
-                      <span>
-                        <AiOutlineMobile className="mr-2" />
-                      </span>
-                      Mobiles
                       <span>
                         <AiOutlineArrowRight className="mr-2" />
                       </span>
@@ -147,20 +134,6 @@ export default function Category() {
                         <AiOutlineArrowRight className="mr-2" />
                       </span>
                     </ListGroup.Item>
-
-                    <ListGroup.Item
-                      className="text-muted d-flex justify-content-between"
-                      action
-                      href="#link8"
-                    >
-                      <span>
-                        <GiCat className="mr-2" />
-                      </span>
-                      Pets
-                      <span>
-                        <AiOutlineArrowRight className="mr-2" />
-                      </span>
-                    </ListGroup.Item>
                   </ListGroup>
                 </Col>
 
@@ -181,77 +154,10 @@ export default function Category() {
                         Cars
                       </ListGroup.Item>
                     </Tab.Pane>
-                    <Tab.Pane
-                      eventKey="#link2"
-                      onClick={() => history.push("/category-book")}
-                    >
-                      <ListGroup>
-                        <ListGroup.Item
-                          className="text-muted"
-                          action
-                          href="#link2"
-                        >
-                          For Rent: House & Apparement
-                        </ListGroup.Item>
-
-                        <ListGroup.Item
-                          className="text-muted"
-                          action
-                          href="#link3"
-                        >
-                          Land and Plots
-                        </ListGroup.Item>
-
-                        <ListGroup.Item
-                          className="text-muted"
-                          action
-                          href="#link4"
-                        >
-                          PG and Guest
-                        </ListGroup.Item>
-
-                        <ListGroup.Item
-                          className="text-muted"
-                          action
-                          href="#link5"
-                        >
-                          For sale and & Office
-                        </ListGroup.Item>
-                      </ListGroup>
-                    </Tab.Pane>
-
-                    <Tab.Pane
-                      eventKey="#link3"
-                      onClick={() => history.push("/category-electric")}
-                    >
-                      <ListGroup>
-                        <ListGroup.Item
-                          className="text-muted"
-                          action
-                          href="#link6"
-                        >
-                          Mobiles
-                        </ListGroup.Item>
-                        <ListGroup.Item
-                          className="text-muted"
-                          action
-                          href="#link7"
-                        >
-                          Mobiles Services
-                        </ListGroup.Item>
-                        <ListGroup.Item
-                          className="text-muted"
-                          action
-                          href="#link8"
-                        >
-                          Mobiles Accessories
-                        </ListGroup.Item>
-                      </ListGroup>
-                    </Tab.Pane>
 
                     <Tab.Pane
                       eventKey="#link4"
-                      onClick={() => history.push("/create")}
+                      onClick={() => history.push("/category-book")}
                     >
                       <ListGroup>
                         {" "}
@@ -288,7 +194,7 @@ export default function Category() {
 
                     <Tab.Pane
                       eventKey="#link5"
-                      onClick={() => history.push("/create")}
+                      onClick={() => history.push("/category-electric")}
                     >
                       <ListGroup>
                         <ListGroup.Item
@@ -296,7 +202,7 @@ export default function Category() {
                           action
                           href="#link13"
                         >
-                          Fridge
+                          Fridge && Washing Machine
                         </ListGroup.Item>
                         <ListGroup.Item
                           className="text-muted"
@@ -310,7 +216,7 @@ export default function Category() {
                           action
                           href="#link15"
                         >
-                          Iron box
+                          AC/ Fan
                         </ListGroup.Item>
                       </ListGroup>
                     </Tab.Pane>
@@ -369,35 +275,6 @@ export default function Category() {
                           href="#link15"
                         >
                           Commercialitems
-                        </ListGroup.Item>
-                      </ListGroup>
-                    </Tab.Pane>
-
-                    <Tab.Pane
-                      eventKey="#link8"
-                      onClick={() => history.push("/create")}
-                    >
-                      <ListGroup>
-                        <ListGroup.Item
-                          className="text-muted"
-                          action
-                          href="#link13"
-                        >
-                          Cats && Dogs
-                        </ListGroup.Item>
-                        <ListGroup.Item
-                          className="text-muted"
-                          action
-                          href="#link14"
-                        >
-                          Aquarium Fishes
-                        </ListGroup.Item>
-                        <ListGroup.Item
-                          className="text-muted"
-                          action
-                          href="#link15"
-                        >
-                          Birds
                         </ListGroup.Item>
                       </ListGroup>
                     </Tab.Pane>

@@ -30,6 +30,7 @@ import CategoryBikes from "./Firbase/Category/CategoryBikes";
 import Bikes from "./store/Types/Bikes";
 import CategoryCommercial from "./Firbase/Category/CategoryCommercial";
 import Commercial from "./store/Types/Commasial";
+import CategoryElectric from "./Firbase/Category/CategoryElectric";
 
 function App() {
   const { setUser } = useContext(AuthContext);
@@ -40,8 +41,9 @@ function App() {
       setUser(user);
     });
   });
+
   return (
-    <div>
+    <div className="main">
       <ContextAllPost>
         <Post>
           <Router>
@@ -78,6 +80,10 @@ function App() {
 
             <Route path={"/category-bikes"}>
               <CategoryBikes />
+            </Route>
+
+            <Route path={"/category-electric"}>
+              <CategoryElectric />
             </Route>
 
             <Route path={"/category-commercial"}>

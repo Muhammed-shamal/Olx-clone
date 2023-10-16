@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import App from "./App";
 import Context, { FirebaseContext } from "./store/Context";
 import firebase from "./Firbase/config";
+import './index.css';
 
 ReactDOM.render(
   <FirebaseContext.Provider value={{ firebase }}>

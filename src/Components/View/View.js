@@ -2,11 +2,16 @@ import React, { useContext, useEffect, useState } from "react";
 import { AuthContext, FirebaseContext } from "../../store/Context";
 import { PostContext } from "../../store/PostContext";
 import "./View.css";
-import { Card, Col, Container, Row } from "react-bootstrap";
+import { Col, Container, Row, Card } from "react-bootstrap";
 import { AiOutlineCalendar, AiOutlinePhone } from "react-icons/ai";
 import { useHistory } from "react-router-dom";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
+import img from "../../honda_3x.webp";
+import { BiArrowFromLeft, BiHeart, BiShare } from "react-icons/bi";
+import { RxAvatar } from "react-icons/rx";
+import Heart from "../../assets/Heart";
+import PostCards from "../../Components/Posts/PostCards";
 
 function View() {
   const [userDetails, setUserDetails] = useState("");
@@ -45,127 +50,106 @@ function View() {
       });
   });
 
+
+  let relatedItems = product
+    .filter((products) => products.id !== postDetails.id).map((product, index) => {
+      return (
+        <div className="fresh-recomendation-card" key={index}>
+          <PostCards product={product} index={index} />
+        </div>
+      );
+    });
+
   return (
     <>
       <Header />
+      <div style={{ paddingTop: "50px", paddingBottom: "40px" }}></div>
 
-      <Container className="py-5 text-capitalize">
-        <Row
-          className="justify-content-center align-items-center h-100Z"
-          style={{ marginTop: "5em" }}
-        >
+      <Container >
+        <Row>
+          <Col xl="6">
+            {/* <img src={postDetails.url} className="card-img me-3" alt="img" /> */}
+            <img src={postDetails.url} alt="img" className="card-img img-fluid" style={{ height: "auto" }} />
+          </Col>
+
           <Col>
-            <div className="viewParentDiv">
-              <div className="imageShowDiv" role={"button"}>
-                <img
-                  className="mt-5 mb-5 ml-5"
-                  src={postDetails.url}
-                  alt="img"
-                />
-              </div>
-            </div>
-            <div style={{ marginTop: "8em" }}></div>
+            <div
+              className="card-section1"
+              style={{
+                padding: "10px",
+              }}
+            >
+              <div className="card-body">
+                <div className="d-flex justify-content-between align-items-center">
+                  <Card.Title as="h4">${postDetails.price}</Card.Title>
 
-            <Row className="mt-5">
-              <div className="itemDetails w-50 me-5 ms-5">
-                <h2>productDetails</h2>
-                <hr />
-                <h4>{postDetails.itemName}</h4>
-                <small className="text-muted">{postDetails.category}</small>
-                <small className="text-muted me-4">
-                  <span>
-                    {" "}
-                    <AiOutlineCalendar />
-                  </span>{" "}
-                  {postDetails.createdDate}
-                </small>
-              </div>
-              <Col>
-                <div className="cardSection">
-                  <Container>
-                    <h1 className="mb-3 price">${postDetails.price}</h1>
-
-                    <div className="btnSection">
-                      <div className="makeoffr">
-                        <button
-                          className="btn btn-primary btn-lg mb-3 w-100"
-                          onClick={() => (!user ? history.push("./login") : "")}
-                        >
-                          Make offer
-                        </button>
-                      </div>
-
-                      <div className="chat num">
-                        <button
-                          className="btn btn-outline-primary btn-lg mb-3 w-100"
-                          onClick={() =>
-                            !user
-                              ? history.push("./login")
-                              : history.push("./chat-section")
-                          }
-                        >
-                          Chat with seller
-                        </button>
-                      </div>
-                      <h6 className="contactNo">
-                        <span>
-                          <AiOutlinePhone />
-                        </span>{" "}
-                        +12345679
-                      </h6>
-                    </div>
-                  </Container>
-                </div>
-              </Col>
-            </Row>
-            <Row>
-              {/*second*/}
-
-              <Col>
-                <div className="viewParentDiv">
-                  <div className="contactDetails">
-                    <h2>contactDetails</h2>
-                    <hr />
-                    <h4>UserName: {userDetails.userName}</h4>
-                    <small className="text-muted">
-                      Phone no: {userDetails.phone}
-                    </small>
+                  <div className="mb-3">
+                    <BiShare style={{ marginRight: "5px" }} />
+                    <BiHeart />
                   </div>
                 </div>
-              </Col>
-            </Row>
-          </Col>
-        </Row>
 
-        <Row className="d-flex justify-content-center mt-5">
-          <Col>
-            <div className="fullCard">
-              <div>
-                <h2 className="text-muted">Related items</h2>
+                <div className="d-flex justify-content-between">
+                  <small className="text-muted">Kerala, kannur, 670702F</small>
+                  <small className="text-muted">
+                    {postDetails.createdDate}
+                  </small>
+                </div>
               </div>
-              {product
-                .filter((products) => products.id !== postDetails.id)
-                .map((value, index) => {
-                  return (
-                    <Card
-                      onClick={() => {
-                        setPostDetails(value);
-                        history.push("/view");
-                      }}
-                    >
-                      <div>
-                        <Card.Img src={value.url} style={{ width: "100px" }} />
-                      </div>
-                      <Card.Body>
-                        <Card.Title>$ {value.price}</Card.Title>
-                        <Card.Text>{value.itemName}</Card.Text>
-                      </Card.Body>
-                    </Card>
-                  );
-                })}
+            </div>
+
+            <div className="card-section2">
+              <Col>
+                <h6>User Detail</h6>
+                <div className="">
+                  <RxAvatar className="mb-1" style={{ marginRight: "5px" }} />
+                  <span>{user.displayName}</span>
+                </div>
+
+                <div className="d-flex justify-content-between">
+                  <button
+                    className="btn btn-outline-primary btn-sm mt-2 w-50"
+                    onClick={() => {
+                      user
+                        ? history.push("/commingSoon")
+                        : history.push("/sign");
+                    }}
+                  >
+                    Chat with Seller
+                  </button>
+
+                  <button
+                    className="btn btn-primary mt-2 w-50 btn-sm"
+                    onClick={() => {
+                      user
+                        ? history.push("/commingSoon")
+                        : history.push("/sign");
+                    }}
+                  >
+                    Make Offer
+                  </button>
+                </div>
+              </Col>
+            </div>
+
+            <div className="card-section3">
+              <h4>Details</h4>
+
+              <Card.Title as={"h6"}>
+                <small>{postDetails.year}</small> {postDetails.itemName}
+              </Card.Title>
+              <Card.Text>{postDetails.category}</Card.Text>
+              <small>{postDetails.km} Kilometers </small>
+              <Card.Text>{postDetails.description}</Card.Text>
             </div>
           </Col>
         </Row>
+
+        <Col className=" mt-3 mb-5">
+          <div className="cards">
+            {relatedItems}
+          </div>
+        </Col>
       </Container>
       <Footer />
     </>

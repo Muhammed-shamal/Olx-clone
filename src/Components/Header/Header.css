@@ -154,9 +154,18 @@
 
 @media only screen and (max-width: 700px) {
   .placeSearch,
-  .productSearch,
-  .sellMenu {
+  .productSearch {
     display: none;
+  }
+
+  .sellMenu .sellMenuContent {
+    font-size: 8px;
+    font-weight: 500;
+  }
+
+  span {
+    font-size: 12px;
+    font-weight: 500;
   }
 }
 
@@ -190,10 +199,16 @@
   width: 80%;
 }
 
-.bell:focus{
+.bell:focus {
   background: #5aece4;
 }
 
-.chat-btn:focus{
+.chat-btn:focus {
   background: #5aece4;
+}
+
+@media screen and (max-width: 600px) {
+  .mr-5 {
+    margin-right: 0;
+  }
 }

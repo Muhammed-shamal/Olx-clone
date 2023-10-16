@@ -45,7 +45,7 @@ function Posts() {
     <div className="postParentDiv">
       <div className="moreView">
         {post && (
-          <div className="recommendations">
+          <div className="">
             <div className="heading">
               <span className="mt-2 mb-4">Fresh recommendations</span>
 

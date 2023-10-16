@@ -4,6 +4,7 @@ import { AiOutlineArrowLeft } from "react-icons/ai";
 import { useHistory } from "react-router-dom";
 import { AuthContext, FirebaseContext } from "../../store/Context";
 import Footer from "../../Components/Footer/Footer";
+import "./categorycar.css";
 
 export default function CategoryCar() {
   const [img, setImg] = useState(null);
@@ -103,7 +104,7 @@ export default function CategoryCar() {
               <Form.Label>Select the Type *</Form.Label>
               <div>
                 <select
-                  className="selection"
+                  className=""
                   data-aut-id="dd-state"
                   onChange={(event) => setType(event.target.value)}
                 >
@@ -116,7 +117,6 @@ export default function CategoryCar() {
               <Form.Label>Brand *</Form.Label>
               <div>
                 <select
-                  className="selection"
                   data-aut-id="ddmake"
                   onChange={(event) => setCategory(event.target.value)}
                 >
@@ -348,7 +348,6 @@ export default function CategoryCar() {
               <Form.Label>state *</Form.Label>
               <div>
                 <select
-                  className="selection"
                   data-aut-id="dd-state"
                   onChange={(event) => setLocation(event.target.value)}
                 >
