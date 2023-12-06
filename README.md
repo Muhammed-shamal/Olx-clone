@@ -31,6 +31,8 @@ And one Thing to view the Items,  **need to login first or you are at first time
 * Front-End: React.js, React Router for navigation
 * Back-End: Firebase for database and authentication
 * Styling: CSS and/or a CSS framework (e.g., Bootstrap)
+* Context API (for some of small state management)
+
 Deployment: Host the project on a cloud platform  Netlify
 
  ** Live Demo:**[Olx Clone](https://adorable-cheesecake-4d449e.netlify.app/)
