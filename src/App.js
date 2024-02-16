@@ -46,7 +46,7 @@ function App() {
     <div className="main">
       <ContextAllPost>
         <Post>
-          <Router basename = "/https://adorable-cheesecake-4d449e.netlify.app">
+          <Router basename = "/">
             <Route exact path={"/"}>
               <Home />
             </Route>
