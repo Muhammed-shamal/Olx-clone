@@ -46,7 +46,7 @@ function App() {
     <div className="main">
       <ContextAllPost>
         <Post>
-          <Router basename = "/*">
+          <Router>
             <Route exact path={"/"}>
               <Home />
             </Route>
